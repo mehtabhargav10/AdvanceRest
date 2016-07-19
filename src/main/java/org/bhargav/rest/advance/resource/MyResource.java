@@ -1,5 +1,8 @@
 package org.bhargav.rest.advance.resource;
 
+import java.util.Calendar;
+import java.util.Date;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -9,9 +12,9 @@ import javax.ws.rs.core.MediaType;
 public class MyResource {
 
 	@GET
-	@Produces(MediaType.TEXT_PLAIN)
-	public String test()
+	@Produces({MediaType.TEXT_PLAIN,MediaType.APPLICATION_JSON})
+	public Date test()
 	{
-		return "test web Service";
+		return Calendar.getInstance().getTime();
 	}
 }
